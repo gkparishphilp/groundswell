@@ -150,9 +150,6 @@ GEM
     jquery-rails (3.0.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.0.3)
-      jquery-rails
-      railties (>= 3.1.0)
     json (1.8.0)
     jwt (0.1.8)
       multi_json (>= 1.5)
@@ -353,7 +350,6 @@ DEPENDENCIES
   guard-rspec
   heroku_san
   jquery-rails
-  jquery-ui-rails
   koala
   launchy
   newrelic_rpm
