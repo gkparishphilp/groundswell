@@ -1,0 +1,34 @@
+%h1
+	Facebook Resp
+
+%p
+	email: 
+	= @auth['extra']['raw_info'].email
+%p
+	name: 
+	= @auth['extra']['raw_info'].username
+%p
+	first_name: 
+	= @auth['info']['first_name']
+%p
+	last_name: 
+	= @auth['info']['last_name']
+%p
+	gender: 
+	= @auth['extra']['raw_info'].gender 
+%p
+	provider: 
+	= @auth['provider']
+%p
+	uid: 
+	= @auth['uid']
+%p
+	token: 
+	= @auth['credentials'].token
+%p
+	secret: 
+	= @auth['credentials'].secret
+
+%hr
+
+= @auth.to_yaml

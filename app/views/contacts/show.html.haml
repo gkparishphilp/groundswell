@@ -1,0 +1,11 @@
+
+%h2
+	= @contact.subject
+
+= time_ago_in_words( @contact.created_at )
+%p
+Status:
+= @contact.status
+
+%p
+	= raw @contact.content

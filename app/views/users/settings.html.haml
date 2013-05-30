@@ -1,0 +1,23 @@
+
+.row
+	.small-8.columns
+		= form_for @current_user do |f|
+			= f.label :bio
+			= f.text_area :bio
+
+			= f.label :email
+			= f.text_field :email
+
+			= f.label :password
+			= f.password_field :password
+
+			= f.label :password_confirmation
+			= f.password_field :password_confirmation
+	.small-4.columns
+		%p
+			Your referral link is:
+			= "http://begoaled.com/?ref=#{@current_user.ref_code}"
+		%p
+			avatar
+		%p
+			facebook link

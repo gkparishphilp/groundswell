@@ -1,0 +1,35 @@
+%h1
+	Welcome,
+	= @current_user
+
+%ul.small-block-grid-2.large-block-grid-3
+	%li
+		.panel.radius
+			%h3 
+				= link_to 'Blog', swell_media.admin_blog_index_path
+			There are
+			= pluralize SwellMedia::BlogArticle.where( site_id: @current_site.id ).count, 'Article'
+	%li
+		.panel.radius
+			%h3 
+				= link_to 'Pages', swell_media.admin_pages_path
+			There are
+			= pluralize SwellMedia::Page.where( site_id: @current_site.id ).count, 'Page'
+	%li
+		.panel.radius
+			%h3 
+				= link_to 'Users', main_app.users_admin_index_path
+			There are
+			= pluralize User.count, 'User'
+	%li
+		.panel.radius
+			%h3 
+				= link_to 'Contacts', contacts_path
+			There are
+			= pluralize Contact.count, 'Contacts'
+	%li
+		.panel.radius
+			%h3 
+				= link_to 'App Events', main_app.app_events_admin_index_path
+			There are
+			= pluralize AppEvent.count, 'Event'

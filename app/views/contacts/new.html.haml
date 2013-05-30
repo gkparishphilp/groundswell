@@ -1,0 +1,30 @@
+.row
+	.large-8.small-12.columns.small-centered
+		.panel.radius{ style: "background: #fff;margin-top:60px;margin-bottom:120px;"}
+			%h2 
+				We'd Love to Hear from You!
+
+			= form_for Contact.new do |f|
+				.row
+					.large-2.small-12.columns
+						= f.label :name, 'Name:', class: 'inline'
+					.large-10.small-12.columns
+						= f.text_field :name
+
+					.large-2.small-12.columns
+						= f.label :email, 'Email:', class: 'inline'
+					.large-10.small-12.columns
+						= f.text_field :email
+
+					.large-2.small-12.columns
+						= f.label :subject, 'Subject:', class: 'inline'
+					.large-10.small-12.columns
+						= f.text_field :subject
+
+					.large-2.small-12.columns
+						= f.label :content, 'Message:', class: 'inline'
+					.large-10.small-12.columns
+						= f.text_area :content
+					.small-6.columns.small-offset-6
+						= link_to 'Cancel', '/', class: 'button small radius secondary'
+						= f.submit 'Enter', class: 'button radius'

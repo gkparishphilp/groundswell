@@ -1,0 +1,38 @@
+.row
+	.small-12.columns
+		%h2
+			Hi
+			= @current_user
+
+
+%h3 Goals:
+- @goal_assignments.each do |goal_assignment|
+	= goal_assignment.assigned.name
+
+%h3 Activities:
+- @activity_assignments.each do |activity_assignment|
+	= activity_assignment.assigned.name
+
+%h3 Stats:
+- @stat_assignments.each do |stat_assignment|
+	= stat_assignment.assigned.name
+
+
+
+
+
+
+
+
+.row
+	.small-8.columns
+		%h3 Today
+
+		.activity{ style: 'background:#eee;padding:4px;'}
+		
+			Run 5 miles
+			%i.icon-check
+
+.row
+	.small-12.columns
+		%h3 Coming Up

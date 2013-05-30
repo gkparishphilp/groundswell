@@ -1,0 +1,8 @@
+
+%h2 Contacts
+
+- @contacts.each do |contact|
+	%div[contact]
+		From:
+		= contact.user.email
+		= link_to contact.subject, contact

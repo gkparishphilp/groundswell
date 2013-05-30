@@ -1,0 +1,48 @@
+
+.sticky.contain-to-grid
+	%nav.top-bar
+		%ul.title-area
+			%li.name
+				%h1= link_to @current_user, '/home'
+			%li.toggle-topbar.menu-icon
+				%a{ href: '#' }
+					%span Menu
+		%section.top-bar-section
+			%ul.left
+				%li.divider
+				%li
+					= link_to 'Goals', goals_path
+				%li
+					= link_to 'Activities', activities_path
+				%li
+					= link_to 'Stats', stats_path
+				%li
+					= link_to 'Team', supporters_path
+			%ul.right
+				- if not( signed_in? )
+					%li
+						%a{ href: '#' }
+							Welcome
+							= @current_user
+					%li= link_to 'Login', '/users/sign_in'
+					%li= link_to 'Register', '/users/sign_up'
+				- else
+					%li.has-dropdown
+						%a{ href: '#' }
+							= @current_user.avatar_tag width: 20, valign: 'middle'
+							= @current_user
+
+						%ul.dropdown
+							- if @current_user.provider.present?
+								%li
+									%a{ href: provider_home_path }
+										%i.icon-laptop
+										Provider Dashboard
+							%li
+								%a{ href: user_settings_path }
+									%i.icon-cogs
+									Settings
+							%li
+								%a{ href: '/users/sign_out', 'data-method' => :delete }
+									%i.icon-signout
+									Sign Out 

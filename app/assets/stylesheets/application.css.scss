@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require foundation_and_overrides
+ *= require font-awesome/font-awesome.min
+ *= require_tree .
+ */
+
+html, body{
+	height: 100%;
+}
+
+.container{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+
+.footer, .push {
+	height: 4em;
+}
+
+.footer, .push {
+	clear: both;
+}
+.footer-row{ border-top: 1px #ddd solid;}
+
+.footer-content{
+	float: right;
+	margin-right: 1em; 
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-size: 85%;
+	color: #333;
+}
+
+.float-right{ float: right; }
+.float-left{ float: right; }
+
+
