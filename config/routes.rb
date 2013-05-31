@@ -1,13 +1,13 @@
 Groundswell::Application.routes.draw do
     root to: 'homepage#index'
-    resources :users, only: :update
+   
+    resources :contacts
 
     match '/home' => 'users#home', as: 'user_home'
     match '/settings' => 'users#settings', as: 'user_settings'
     match '/contact' => 'contacts#new', as: 'contact'
     match '/sitemap' => 'homepage#sitemap', as: 'sitemap'
 
-    match '/dash' => 'providers#home', as: 'provider_home'
 
     devise_scope :user do
       match '/login' => 'sessions#new', as: 'login'
