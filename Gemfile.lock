@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/parishphilp/swell_media.git
-  revision: 44738369c64841e00b6e8ce66be17e826c4de361
+  revision: 51a8440cf23fb7828c76487aa5e9c0aaf5c6ac6a
   specs:
     swell_media (0.0.1)
       acts-as-taggable-on
@@ -14,7 +14,7 @@ GIT
       kaminari
       paper_trail
       rabl
-      rails (~> 3.2.12)
+      rails (~> 3.2.13)
 
 GEM
   remote: https://rubygems.org/

@@ -1,0 +1,44 @@
+%article.media[@media]
+	%header
+		- if @media.is_title_visible?
+			%hgroup
+				%h1.media-title
+					= @media.title
+				- if @media.subtitle.present?
+					%h2.media-subtitle
+						= @media.subtitle
+			.meta
+				.media-date
+					Posted:
+					%time{ datetime: @media.publish_at, pubdate: 'pubdate' }
+						= @media.publish_at.to_formatted_s( :short )
+				.media-author
+					by:
+					%a{ href: @media.user.website_url, rel: 'author' }
+						= @media.user.gravatar_tag class: 'tiny-avatar'
+						= @media.user
+
+				- if @media.category.present?
+					.media-category
+						.category-label
+							%i.icon-folder-open
+							Filed under:
+						.category-name= link_to @media.category.name, blog_category_path( :category => @media.category.name )
+
+				- if @media.tags.present?
+					.media-tags
+						.tag-label
+							%i.icon-tags
+							Tagged:
+						%ul.tag-list
+							- for tag in @media.tags
+								%li.tag
+									= link_to tag.name, blog_tagged_path( :tagged => tag.name )
+
+	.media-content
+		= raw @media.content
+
+- if @media.is_commentable?
+	%section#comments
+		= render 'partials/disquis'
+		
