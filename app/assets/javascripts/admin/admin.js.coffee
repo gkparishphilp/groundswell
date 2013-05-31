@@ -1,6 +1,4 @@
 $ ->
-	$('.datepicker').datetimepicker
-		dateFormat: 'yy-mm-dd'
 
 	$('.hover-toggled').css 'display', 'none'
 
